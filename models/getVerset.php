@@ -2,7 +2,7 @@
 
 include_once (dirname(__FILE__) . '/../controllers/database.php');
 
-function getVersetById(PDO $db, $id) {
+/* function getVersetById(PDO $db, $id) {
     if( empty($id) )
         $id = 1;
 
@@ -23,4 +23,15 @@ function getVersetById(PDO $db, $id) {
     }
 
     return $toReturn;
+} */
+
+function chargerClasse($classe) {
+    require_once('class/' . $classe . '.php');
 }
+
+spl_autoload_register('chargerClasse');
+
+$versetG = new VersetManager($db);
+$rtn = $versetG->getById(1);
+
+var_dump($rtn);

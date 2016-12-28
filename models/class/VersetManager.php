@@ -39,7 +39,33 @@ class VersetManager {
 
     // getters
     public function get() {
+        $request = $this->_db->query('
+            SELECT *
+            FROM verset
+        ')->fetchColumn();
 
+        return $request;
+    }
+
+    public function getById($vid) {
+        $request = $this->_db->prepare('
+            SELECT *
+            FROM verset
+            WHERE vid = :vid
+        ');
+
+        $request->bindValue(
+            ':vid', $vid, PDO::PARAM_INT
+        );
+
+        $request->execute();
+
+        while ($donnees = $request->fetch(PDO::FETCH_ASSOC))
+        {
+            $verset[] = $donnees;
+        }
+
+        return $verset;
     }
 
     public function getList() {

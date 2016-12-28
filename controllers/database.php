@@ -7,7 +7,7 @@ define ('HOST', 'localhost');
 define ('DB', 'traversee');
 define ('DBCARSET', 'utf8');
 define ('DBUSER', 'root');
-define ('DBPASSWORD', 'Bcr4497685H');
+define ('DBPASSWORD', '');
 
 /**
  * DBCONNEXION
