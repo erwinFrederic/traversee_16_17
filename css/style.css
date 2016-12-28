@@ -1,0 +1,38 @@
+/** **/
+.add-verset-container {
+    margin: auto;
+    margin-top: 4%;
+    background: #ccc;
+    border: 1px solid #ddd;
+    padding: 3%;
+    float: none !important;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 1%;
+    margin: 1% 0 2%;
+    border: 1px solid #fefefe;
+    box-shadow: none;
+}
+
+form textarea {
+    resize: none;
+}
+
+form input[type="submit"] {
+    margin: 2% 0;
+    padding: 1% 2%;
+    background: #000;
+    color: #FFF;
+    border: none;
+    box-shadow: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2%;
+}
