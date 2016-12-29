@@ -42,9 +42,14 @@ class VersetManager {
         $request = $this->_db->query('
             SELECT *
             FROM verset
-        ')->fetchColumn();
+        ');
 
-        return $request;
+        while ($donnees = $request->fetch(PDO::FETCH_ASSOC))
+        {
+            $versets[] = $donnees;
+        }
+
+        return $versets;
     }
 
     public function getById($vid) {

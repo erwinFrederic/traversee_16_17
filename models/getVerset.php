@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once (dirname(__FILE__) . '/../controllers/database.php');
 
 /* function getVersetById(PDO $db, $id) {
@@ -31,7 +31,4 @@ function chargerClasse($classe) {
 
 spl_autoload_register('chargerClasse');
 
-$versetG = new VersetManager($db);
-$rtn = $versetG->getById(1);
 
-var_dump($rtn);

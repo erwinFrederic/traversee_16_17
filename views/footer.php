@@ -1,7 +1,7 @@
 
             <footer>
                 <div class="copyright">
-                    <p>© Traversée 16 - 17</p>
+                    <p>© Traversée 16 - 17 / <a href="index.php">Retour</a></p>
                 </div>
             </footer>
             
