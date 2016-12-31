@@ -37,7 +37,7 @@ class UserEntity
      */
     public function setUemail($uemail)
     {
-        $this->_uemail = $uemail;
+        $this->_uemail = htmlspecialchars($uemail);
     }
 
     /**
@@ -53,7 +53,7 @@ class UserEntity
      */
     public function setUnomprenoms($unomprenoms)
     {
-        $this->_unomprenoms = $unomprenoms;
+        $this->_unomprenoms = htmlspecialchars($unomprenoms);
     }
 
     /**
@@ -69,7 +69,7 @@ class UserEntity
      */
     public function setUpaysorigine($upaysorigine)
     {
-        $this->_upaysorigine = $upaysorigine;
+        $this->_upaysorigine = htmlspecialchars($upaysorigine);
     }
 
     /**
@@ -87,5 +87,5 @@ class UserEntity
     {
         $this->_vid = $vid;
     }
-    
+
 }

@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 include_once (dirname(__FILE__) . '/../controllers/database.php');
 
 /* function getVersetById(PDO $db, $id) {

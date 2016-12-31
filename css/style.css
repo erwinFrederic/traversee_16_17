@@ -1,4 +1,20 @@
 /** **/
+
+.message {
+    text-align: center;
+    padding: 1% 2%;
+    margin-top: 2%;
+}
+
+.message.success {
+    background: lightgreen;
+}
+
+.message.error {
+    background: lightpink;
+}
+
+
 .add-verset-container {
     margin: auto;
     margin-top: 4%;
@@ -40,3 +56,4 @@ footer {
     text-align: center;
     margin-top: 2%;
 }
+

@@ -14,6 +14,12 @@
                     <textarea name="content-field" placeholder="Veuillez entrer le contenu du verset"></textarea>
                 </div>
 
+                <div class="content">
+                    <label class="img-label">Image du verset</label>
+                    <!-- <input type="text" class="field" name="content-field" placeholder="Veuillez entrer le contenu du verset"> -->
+                    <input type="file" name="img-field" class="img-field" >
+                </div>
+
                 <div class="submit">
                     <input type="submit" name="add-verset" value="Ajouter un nouveau verset">
                 </div>

@@ -65,30 +65,27 @@ class UserManager {
         return $versets;
     }
 
-    public function getById($uid) {
+    public function getByEmail($uemail) {
         $request = $this->_db->prepare('
             SELECT *
             FROM tuser
-            WHERE uid = :uid
+            WHERE uemail = :uemail
         ');
 
         $request->bindValue(
-            ':vid', $uid, PDO::PARAM_INT
+            ':uemail', $uemail, PDO::PARAM_INT
         );
 
         $request->execute();
 
         while ($donnees = $request->fetch(PDO::FETCH_ASSOC))
         {
-            $verset[] = $donnees;
+            $user[] = $donnees;
         }
 
-        return $verset;
+        return $user;
     }
 
-    public function getList() {
-
-    }
 }
 
 ?>

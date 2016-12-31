@@ -1,3 +1,5 @@
+<?php // var_dump($_SESSION) ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,7 +26,8 @@
         
         <div class="main-content container">
             <?php if( !empty($_SESSION['message']) ): ?>
-                <div class="message <?php $_SESSION['message']['status'] ?>">
-                    <?php print $_SESSION['message']['status']; ?>
+                <div class="message <?php print $_SESSION['message']['status'] ?>">
+                    <?php print $_SESSION['message']['content']; ?>
+                    <?php print $_SESSION['message']= ''; ?>
                 </div>
             <?php endif; ?>
