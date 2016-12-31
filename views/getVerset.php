@@ -20,6 +20,7 @@
 
     function FormatString ($string) {
         if ( !empty ($string) & is_string($string) ) {
+            $string = strtolower($string);
             $string = Unaccent($string);
             $string = ReplaceDeuxPoints($string);
         }
@@ -34,11 +35,14 @@
             <div class="verset">
                 <?php if (!empty($_SESSION['verset'])) : ?>
 
-                    <p class="content"><?php print $_SESSION['verset'][0]['content']; ?></p>
-                    <p class="reference"><?php print $_SESSION['verset'][0]['vreference']; ?></p>
-                    <p class="download">
-                        <a class="button btn-primary" href="img/<?php print FormatString($_SESSION['verset'][0]['vreference']) ?>.jpg">Télécharger votre calendrier</a>
+                    <!-- <p class="content"><?php print $_SESSION['verset'][0]['content']; ?></p>
+                    <p class="reference"><?php print $_SESSION['verset'][0]['vreference']; ?></p> -->
+                    <p>
+                        <img style="width:100%;" src="img/versets/<?php print FormatString($_SESSION['verset'][0]['vreference']) ?>.jpg" />
                     </p>
+                    <!-- <p class="download">
+                        <a class="button btn-primary" href="img/versets/<?php print FormatString($_SESSION['verset'][0]['vreference']) ?>.jpg">Télécharger votre calendrier</a>
+                    </p> -->
 
                 <?php endif; ?>
             </div>

@@ -19,6 +19,10 @@ form textarea {
     box-shadow: none;
 }
 
+form .country input[type="text"] {
+    width: 70%;
+}
+
 form textarea {
     resize: none;
 }
