@@ -29,8 +29,8 @@
                     <input type="text" name="city_field" placeholder="Veuillez entrer votre ville de résidence" required />
                 </div>
 
-                <div class="submit">
-                    <input type="submit" name="get-verset" value="Obtenir son verset">
+                <div>
+                    <input class="btn btn-primary" type="submit" name="get-verset" value="Obtenir son verset">
                 </div>
             </form>
 
