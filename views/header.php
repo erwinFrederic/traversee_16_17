@@ -21,6 +21,11 @@
         <!-- Own CSS -->
         <link rel="stylesheet" href="css/style.css" />
 
+        <!-- Country selector -->
+        <script src="js/country-select-js/build/js/countrySelect.min.js"></script>
+        <link rel="stylesheet" href="js/country-select-js/build/css/countrySelect.css">
+
+
     </head>
     <body>
         

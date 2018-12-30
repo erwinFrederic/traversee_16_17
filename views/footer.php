@@ -1,8 +1,11 @@
 
             <footer>
-                <div class="copyright">
-                    <p>© <a href="http://vasesdhonneur.org/">Eglises Vases d'Honneur</a> | Traversée 18 - 19 / <a href="index.php">Retour</a></p>
-                </div>
+                <footer>
+                    <div class="copyright">
+                        <p><img src="http://vasesdhonneur.org/images/logo.png" alt="logo" /> © Eglises Vases d'Honneur - Traversée 18 - 19</p>
+                    </div>
+                </footer>
+
             </footer>
             
         </div>

@@ -4,9 +4,14 @@
         <form class="get-verset" method="post" action="controllers/getVerset.php">
 
             <form id="addVersetForm" method="post" class="add-verset" action="controllers/addVerset.php">
-                <div class="nom_prenoms">
-                    <label class="nom-label">Nom & prénoms</label>
-                    <input type="text" class="field" name="nomprenoms_field" placeholder="Veuillez entrer vos noms et prénoms" required />
+                <div class="name">
+                    <label class="nom-label">Nom</label>
+                    <input type="text" class="field" name="name_field" placeholder="Veuillez entrer votre nom" required />
+                </div>
+
+                <div class="surname">
+                    <label class="nom-label"Prénoms</label>
+                    <input type="text" class="field" name="surname_field" placeholder="Veuillez entrer vos prénoms" required />
                 </div>
 
                 <div class="content">
@@ -14,9 +19,9 @@
                     <input type="email" name="email_field" placeholder="Veuillez entrer votre adresse email" required />
                 </div>
 
-                <div class="country">
-                    <label class="country-label">Pays</label>
-                    <input type="text" name="country_field" placeholder="Veuillez entrer votre pays de résidence" required />
+                <div class="form-group country">
+                    <label class="country-label">Pays <span class="mandatory">*</span> </label>
+                    <input id="country" type="text" name="country_field" placeholder="Veuillez entrer votre pays de résidence" required />
                 </div>
 
                 <div class="city">
