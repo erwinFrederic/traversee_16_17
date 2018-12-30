@@ -68,3 +68,12 @@ footer {
     margin-top: 2%;
 }
 
+.copyright {
+    color: #EEE;
+}
+
+.copyright img {
+    width: 5%;
+    display: block;
+    margin: auto;
+}

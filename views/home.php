@@ -1,5 +1,5 @@
 <div class="col-md-6 add-verset-container">
-    <h1 class="title">Générer son verset biblique</h1>
+    <h1 class="title">Obtenir son verset biblique</h1>
     <div class="page-content">
         <form class="get-verset" method="post" action="controllers/getVerset.php">
 
