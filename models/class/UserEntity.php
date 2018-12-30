@@ -49,15 +49,15 @@ class UserEntity
 	/**
 	 * @return mixed
 	 */
-	public function getUville() {
-		return $this->_uville;
+	public function getUvilleorigine() {
+		return $this->_uvilleorigine;
 	}
 
 	/**
-	 * @param mixed $uville
+	 * @param mixed $uvilleorigine
 	 */
-	public function setUville($uville) {
-		$this->_uville = $uville;
+	public function setUvilleorigine($uvilleorigine) {
+		$this->_uvilleorigine = $uvilleorigine;
 	}
 
     /**

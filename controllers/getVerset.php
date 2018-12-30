@@ -1,14 +1,17 @@
 <?php
+
+/**
+* Created by PhpStorm.
+* User: erwinsittie
+* Date: 08/08/2016
+* Time: 13:43
+*/
+
 if(session_id() == '' || !isset($_SESSION)) {
     // session isn't started
     session_start();
 }
-/**
- * Created by PhpStorm.
- * User: erwinsittie
- * Date: 08/08/2016
- * Time: 13:43
- */
+
 
 
 /**
@@ -17,7 +20,7 @@ if(session_id() == '' || !isset($_SESSION)) {
 
 // var_dump($_POST);
 
-if( !empty($_POST['get-verset']) && !empty($_POST['nomprenoms_field']) && !empty($_POST['email_field']) && !empty($_POST['country_field'] )) {
+if( !empty($_POST['get-verset']) && !empty($_POST['name_field']) && !empty($_POST['email_field']) && !empty($_POST['country_field'] )) {
 
     /**
      * Invoke createVerset Model
@@ -41,8 +44,10 @@ if( !empty($_POST['get-verset']) && !empty($_POST['nomprenoms_field']) && !empty
      */
     $tUserE = new UserEntity();
     $tUserE->setUemail($_POST['email_field']);
-    $tUserE->setUnomprenoms($_POST['nomprenoms_field']);
+    $tUserE->setUnom($_POST['name_field']);
+    $tUserE->setUprenoms($_POST['surname_field']);
     $tUserE->setUpaysorigine($_POST['country_field']);
+    $tUserE->setUvilleorigine($_POST['city_field']);
     $tUserE->setVid($all_id[$rand_keys]);
 
     $tUserM = new UserManager($db);
@@ -57,7 +62,12 @@ if( !empty($_POST['get-verset']) && !empty($_POST['nomprenoms_field']) && !empty
         return True;
     }
 
-    $createUser = $tUserM->create($tUserE);
+    try {
+		$createUser = $tUserM->create($tUserE);
+	} catch (Exception $e) {
+    	print $e->getMessage();
+	}
+
 
     if( empty($createUser) || !$createUser ) {
         $_SESSION['message'] = array(

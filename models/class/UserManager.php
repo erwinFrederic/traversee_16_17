@@ -15,8 +15,8 @@ class UserManager {
     // CRUD
     public function create(UserEntity $user) {
         $request = $this->_db->prepare('
-            INSERT INTO user (uemail, unom, uprenoms, upaysorigine, vid)
-            VALUES (:uemail, :unom, :uprenoms, :upaysorigine, :uvilleorigin, :vid)
+            INSERT INTO tuser (uemail, unom, uprenoms, upaysorigine, uvilleorigine, vid)
+            VALUES (:uemail, :unom, :uprenoms, :upaysorigine, :uvilleorigine, :vid)
         ');
 
         $request->bindValue(
@@ -24,22 +24,31 @@ class UserManager {
         );
 
         $request->bindValue(
-            ':unomprenoms', $user->getUnom(), PDO::PARAM_STR
+            ':unom', $user->getUnom(), PDO::PARAM_STR
         );
 
         $request->bindValue(
-            ':unomprenoms', $user->getUprenoms(), PDO::PARAM_STR
+            ':uprenoms', $user->getUprenoms(), PDO::PARAM_STR
         );
 
         $request->bindValue(
             ':upaysorigine', $user->getUpaysorigine(), PDO::PARAM_STR
         );
 
+		$request->bindValue(
+			':uvilleorigine', $user->getUvilleorigine(), PDO::PARAM_STR
+		);
+
         $request->bindValue(
-            ':vid', $user->getVid(), PDO::PARAM_INT
+            ':vid', intval($user->getVid()), PDO::PARAM_INT
         );
 
-        $rtn = $request->execute();
+        try {
+			$rtn = $request->execute();
+		} catch (Exception $e) {
+        	print $e->getMessage();
+        	die;
+		}
 
         if( !empty($rtn) ) {
             return $rtn;

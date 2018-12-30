@@ -21,7 +21,7 @@
 
                 <div class="form-group country">
                     <label class="country-label">Pays <span class="mandatory">*</span> </label>
-                    <input id="country" type="text" name="country_field" placeholder="Veuillez entrer votre pays de résidence" required />
+                    <input id="country" type="text" name="country_field" placeholder="Veuillez entrer votre pays de résidence" />
                 </div>
 
                 <div class="city">
