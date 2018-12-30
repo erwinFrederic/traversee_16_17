@@ -10,4 +10,9 @@
             
         </div>
     </body>
+
+    <script>
+        $("#country").countrySelect();
+    </script>
+
 </html>
