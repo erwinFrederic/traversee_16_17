@@ -19,7 +19,7 @@
 }
 
 .country-select {
-    display: block;
+    display: block !important;
 }
 
 .country-select.inside input, .country-select.inside input[type=text] {
