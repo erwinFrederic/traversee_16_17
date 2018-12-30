@@ -26,6 +26,10 @@ body {
     display: block !important;
 }
 
+.country-select .country-list .country {
+    color: #333;
+}
+
 .country-select.inside input, .country-select.inside input[type=text] {
     width: 100%;
 }
@@ -33,10 +37,12 @@ body {
 .add-verset-container {
     margin: auto;
     margin-top: 4%;
-    background: #ccc;
-    border: 1px solid #ddd;
+    background: #0a4a4a;
+    border: 1px solid #0e3b40;
+    box-shadow: 1px 2px 6px #5d5c5c;
     padding: 3%;
     float: none !important;
+    color: #FFF;
 }
 
 form input[type="text"],

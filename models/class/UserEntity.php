@@ -4,8 +4,10 @@ class UserEntity
 {
     protected $_uid;
     protected $_uemail;
-    protected $_unomprenoms;
+    protected $_unom;
+    protected $_uprenoms;
     protected $_upaysorigine;
+    protected $_uvilleorigine;
     protected $_vid;
 
     /**
@@ -15,6 +17,48 @@ class UserEntity
     {
         return $this->_uid;
     }
+
+	/**
+	 * @return mixed
+	 */
+	public function getUnom() {
+		return $this->_unom;
+	}
+
+	/**
+	 * @param mixed $unom
+	 */
+	public function setUnom($unom) {
+		$this->_unom = $unom;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getUprenoms() {
+		return $this->_uprenoms;
+	}
+
+	/**
+	 * @param mixed $uprenoms
+	 */
+	public function setUprenoms($uprenoms) {
+		$this->_uprenoms = $uprenoms;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getUville() {
+		return $this->_uville;
+	}
+
+	/**
+	 * @param mixed $uville
+	 */
+	public function setUville($uville) {
+		$this->_uville = $uville;
+	}
 
     /**
      * @param mixed $uid
@@ -38,22 +82,6 @@ class UserEntity
     public function setUemail($uemail)
     {
         $this->_uemail = htmlspecialchars($uemail);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUnomprenoms()
-    {
-        return $this->_unomprenoms;
-    }
-
-    /**
-     * @param mixed $unomprenoms
-     */
-    public function setUnomprenoms($unomprenoms)
-    {
-        $this->_unomprenoms = htmlspecialchars($unomprenoms);
     }
 
     /**
