@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="surname">
-                    <label class="nom-label"Prénoms</label>
+                    <label class="nom-label">Prénoms</label>
                     <input type="text" class="field" name="surname_field" placeholder="Veuillez entrer vos prénoms" required />
                 </div>
 
