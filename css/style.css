@@ -14,6 +14,17 @@
     background: lightpink;
 }
 
+.country-label {
+    display: block;
+}
+
+.country-select {
+    display: block;
+}
+
+.country-select.inside input, .country-select.inside input[type=text] {
+    width: 100%;
+}
 
 .add-verset-container {
     margin: auto;
