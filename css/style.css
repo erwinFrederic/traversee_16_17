@@ -1,5 +1,9 @@
 /** **/
 
+body {
+    background: #000;
+}
+
 .message {
     text-align: center;
     padding: 1% 2%;
