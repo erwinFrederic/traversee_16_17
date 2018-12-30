@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta charset="utf-8" >
-        <title>Traversée 16 - 17</title>
+        <title>Traversée 18 - 19 | Eglises Vases d'Honneur</title>
 
         <!-- jQuery -->
         <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
