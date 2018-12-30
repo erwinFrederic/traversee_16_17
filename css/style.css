@@ -54,6 +54,7 @@ form textarea {
     margin: 1% 0 2%;
     border: 1px solid #fefefe;
     box-shadow: none;
+    color: #333;
 }
 
 form .country input[type="text"] {
