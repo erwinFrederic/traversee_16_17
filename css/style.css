@@ -74,6 +74,16 @@ form input[type="submit"] {
     box-shadow: none;
 }
 
+.evh-online {
+    display: none;
+    background: #eee;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 12px 6px 1px 5px;
+    margin: 29px 0;
+    text-shadow: 1px 3px 5px #c3b8b8;
+}
+
 footer {
     text-align: center;
     margin-top: 2%;

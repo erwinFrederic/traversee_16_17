@@ -13,6 +13,14 @@
 
     <script>
         $("#country").countrySelect();
+
+        $("#country").on('change', function () {
+            if ($(this).val() !== 'Côte d’Ivoire')
+                $('.evh-online').css("display", "block");
+
+            if ($(this).val() == 'Côte d’Ivoire')
+                $('.evh-online').css("display", "none");
+        })
     </script>
 
 </html>

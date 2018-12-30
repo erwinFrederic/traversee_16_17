@@ -24,6 +24,10 @@
                     <input id="country" type="text" name="country_field" placeholder="Veuillez entrer votre pays de résidence" />
                 </div>
 
+                <div class="evh-online">
+                    <p>Pensez à vous inscrire sur <a href="http://vasesdhonneur.org/evhonline"> EVH Online</a></p>
+                </div>
+
                 <div class="city">
                     <label class="country-label">Ville <span class="mandatory">*</span></label>
                     <input type="text" name="city_field" placeholder="Veuillez entrer votre ville de résidence" required />
