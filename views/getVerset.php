@@ -36,9 +36,9 @@ function sendUserMail() {
 	require_once 'libs/vendor/autoload.php';
 
 	// Create the Transport
-	$transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 25))
-		->setUsername('DigitalVH')
-        ->setPassword('Gr@ce3F@veur')
+	$transport = (new Swift_SmtpTransport('smtp.gmail.com', 465))
+		->setUsername('erwin.sittie@vasesdhonneur.info')
+        ->setPassword('dewind91!')
 	;
 
 	// Create the Mailer using your created Transport
