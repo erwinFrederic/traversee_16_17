@@ -7,7 +7,8 @@ session_start();
  * Autoloader
  */
 function chargerClasse($classe) {
-    require_once('models/class/' . $classe . '.php');
+    if (file_exists('models/class/' . $classe . '.php'))
+        require_once('models/class/' . $classe . '.php');
 }
 
 spl_autoload_register('chargerClasse');

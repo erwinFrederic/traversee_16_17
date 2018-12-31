@@ -33,7 +33,7 @@
  */
 
 function sendUserMail() {
-	require_once '../libs/vendor/autoload.php';
+	require_once 'libs/vendor/autoload.php';
 
 	// Create the Transport
 	$transport = (new Swift_SmtpTransport('smtp.vasesdhonneur.org', 25))
