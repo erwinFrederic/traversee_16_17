@@ -15,17 +15,14 @@ class VersetManager {
     // CRUD
     public function create(VersetEntity $verset) {
         $request = $this->_db->prepare('
-            INSERT INTO verset (vreference, content)
-            VALUES (:vreference, :content)
+            INSERT INTO verset (base64)
+            VALUES (:base64)
         ');
 
         $request->bindValue(
-            ':vreference', $verset->getVreference(), PDO::PARAM_STR
+            ':base64', $verset->getBase64(), PDO::PARAM_STR
         );
 
-        $request->bindValue(
-            ':content', $verset->getContent(), PDO::PARAM_STR
-        );
         $request->execute();
     }
 

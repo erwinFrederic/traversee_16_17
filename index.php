@@ -10,6 +10,8 @@ function chargerClasse($classe) {
     require_once('models/class/' . $classe . '.php');
 }
 
+spl_autoload_register('chargerClasse');
+
 /**
  * Initiate DB Connexion
  */

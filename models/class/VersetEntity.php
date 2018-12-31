@@ -3,8 +3,7 @@
 class VersetEntity
 {
     protected $_id;
-    protected $_vreference;
-    protected $_content;
+    protected $_base64;
 
     /**
      * @return mixed
@@ -22,38 +21,20 @@ class VersetEntity
         $this->_id = $id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getVreference()
-    {
-        return $this->_vreference;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getBase64() {
+		return $this->_base64;
+	}
 
-    /**
-     * @param mixed $vreference
-     */
-    public function setVreference($vreference)
-    {
-        if ( !empty ($vreference) )
-            $this->_vreference = $vreference;
-    }
+	/**
+	 * @param mixed $base64
+	 */
+	public function setBase64($base64) {
+		$this->_base64 = $base64;
+	}
 
-    /**
-     * @return mixed
-     */
-    public function getContent()
-    {
-        return $this->_content;
-    }
 
-    /**
-     * @param mixed $content
-     */
-    public function setContent($content)
-    {
-        if ( !empty ($content) )
-            $this->_content = $content;
-    }
 
 }
