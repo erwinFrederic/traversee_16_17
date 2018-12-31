@@ -12,7 +12,9 @@
     </body>
 
     <script>
-        $("#country").countrySelect();
+        $("#country").countrySelect({
+            preferredCountries: ['ci']
+        });
 
         $("#country").on('change', function () {
             if ($(this).val() !== 'Côte d’Ivoire')
