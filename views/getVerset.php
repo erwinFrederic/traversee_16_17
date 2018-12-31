@@ -45,8 +45,8 @@ function sendUserMail() {
 
 	// Create a message
 	$message = (new Swift_Message('Wonderful Subject'))
-		->setFrom(['john@doe.com' => 'John Doe'])
-		->setTo(['receiver@domain.org', 'other@domain.org' => 'A name'])
+		->setFrom(['info@vasesdhonneur.org' => 'John Doe'])
+		->setTo(['erwinsittie@gmail.com', 'other@domain.org' => 'A name'])
 		->setBody('Here is the message itself')
 	;
 
