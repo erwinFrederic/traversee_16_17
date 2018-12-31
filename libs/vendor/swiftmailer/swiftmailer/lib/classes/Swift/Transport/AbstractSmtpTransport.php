@@ -50,7 +50,7 @@ abstract class Swift_Transport_AbstractSmtpTransport implements Swift_Transport
     {
         $this->buffer = $buf;
         $this->eventDispatcher = $dispatcher;
-        $this->addressEncoder = $addressEncoder ?? new Swift_AddressEncoder_IdnAddressEncoder();
+        $this->addressEncoder = ($addressEncoder) ? $addressEncoder : new Swift_AddressEncoder_IdnAddressEncoder();
         $this->setLocalDomain($localDomain);
     }
 
