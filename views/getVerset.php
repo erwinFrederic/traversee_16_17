@@ -27,6 +27,38 @@
 
         return $string;
     }
+
+/**
+ *  Sendmail
+ */
+
+function sendUserMail() {
+	require_once '../libs/vendor/autoload.php';
+
+	// Create the Transport
+	$transport = (new Swift_SmtpTransport('smtp.vasesdhonneur.org', 25))
+		->setUsername('info@vasesdhonneur.org')
+	;
+
+	// Create the Mailer using your created Transport
+	$mailer = new Swift_Mailer($transport);
+
+	// Create a message
+	$message = (new Swift_Message('Wonderful Subject'))
+		->setFrom(['john@doe.com' => 'John Doe'])
+		->setTo(['receiver@domain.org', 'other@domain.org' => 'A name'])
+		->setBody('Here is the message itself')
+	;
+
+	// Send the message
+    try {
+		$result = $mailer->send($message);
+    } catch (Exception $e) {
+        print $e->getMessage();
+    }
+
+}
+
 ?>
 
 <div class="row">
@@ -35,14 +67,13 @@
             <div class="verset">
                 <?php if (!empty($_SESSION['verset'])) : ?>
 
-                    <!-- <p class="content"><?php print $_SESSION['verset'][0]['content']; ?></p>
-                    <p class="reference"><?php print $_SESSION['verset'][0]['vreference']; ?></p> -->
                     <p>
                         <img style="width:100%;" src="<?php print $_SESSION['verset'][0]['base64'] ?>" />
                     </p>
                     <!-- <p class="download">
                         <a class="button btn-primary" href="img/versets/<?php print FormatString($_SESSION['verset'][0]['vreference']) ?>.jpg">Télécharger votre calendrier</a>
                     </p> -->
+                    <?php sendUserMail(); ?>
 
                 <?php endif; ?>
             </div>
