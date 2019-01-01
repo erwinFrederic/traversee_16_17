@@ -33,31 +33,25 @@
  */
 
 function sendUserMail() {
-	require_once 'libs/vendor/autoload.php';
+	require_once 'libs/sendgrid-php/vendor/autoload.php';
 
-	// Create the Transport
-	$transport = (new Swift_SmtpTransport('smtp.gmail.com', 465))
-		->setUsername('erwin.sittie@vasesdhonneur.info')
-        ->setPassword('dewind91!')
-	;
-
-	// Create the Mailer using your created Transport
-	$mailer = new Swift_Mailer($transport);
-
-	// Create a message
-	$message = (new Swift_Message('Wonderful Subject'))
-		->setFrom(['erwinsittie@vasesdhonneur.info' => 'EVH'])
-		->setTo(['erwinsittie@gmail.com' => 'Erwin Sittie'])
-		->setBody('Here is the message itself')
-	;
-
-	// Send the message
-    try {
-		$result = $mailer->send($message);
-		var_dump($result);
-    } catch (Exception $e) {
-        print $e->getMessage();
-    }
+	$email = new \SendGrid\Mail\Mail();
+	$email->setFrom("info@vasesdhonneur.info", "Eglises Vases d'Honneur");
+	$email->setSubject("Votre verset de l'année");
+	$email->addTo("erwinsittie@gmail.com", "Erwin Sittie");
+	$email->addContent("text/plain", "and easy to do anywhere, even with PHP");
+	$email->addContent(
+		"text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
+	);
+	$sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+	try {
+		$response = $sendgrid->send($email);
+		print $response->statusCode() . "\n";
+		print_r($response->headers());
+		print $response->body() . "\n";
+	} catch (Exception $e) {
+		echo 'Caught exception: '. $e->getMessage() ."\n";
+	}
 
 }
 
