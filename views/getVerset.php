@@ -76,7 +76,7 @@ function sendUserMail() {
 
                     ?>
 
-                    <div><a href="<?php print $filepath; ?>" download="MonVerset18-19.png">Télécharger mon verset</a></div>
+                    <div><a class="btn btn-primary" href="<?php print $filepath; ?>" download="MonVerset18-19.png">Télécharger mon verset</a></div>
 
                 <?php endif; ?>
             </div>
