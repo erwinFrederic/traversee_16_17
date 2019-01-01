@@ -46,7 +46,7 @@ function sendUserMail($userEmail = NULL, $verset = NULL) {
 		->setFrom(['traversee@vasesdhonneur.org' => 'Traversée Eglises Vases d\'Honneur'])
 		->setTo([$userEmail => ''])
 		->setBody('Veuillez trouver ci-dessous votre verset.')
-		->addPart('<br/><img src="' . $verset .'" />', 'text/html')
+		->addPart('<br/><img src="' . urlencode($verset) .'" />', 'text/html')
 
 	;
 	// Send the message
