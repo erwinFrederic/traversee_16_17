@@ -36,16 +36,18 @@ function sendUserMail($userEmail = NULL, $verset = NULL) {
 	require_once 'libs/vendor/autoload.php';
 	// Create the Transport
 	$transport = (new Swift_SmtpTransport('127.0.0.1', 25))
-		// ->setUsername('erwin.sittie@vasesdhonneur.info')
-		// ->setPassword('dewind91!')
+		->setUsername('traversee@vasesdhonneur.org')
+		->setPassword('7C^cv75j')
 	;
 	// Create the Mailer using your created Transport
 	$mailer = new Swift_Mailer($transport);
 	// Create a message
-	$message = (new Swift_Message('Wonderful Subject'))
+	$message = (new Swift_Message('Votre verset 2018 - 2019'))
 		->setFrom(['traversee@vasesdhonneur.org' => 'Traversée Eglises Vases d\'Honneur'])
 		->setTo([$userEmail => ''])
-		->setBody('Veuillez trouver ci-dessous votre verset.\n <img src="' . $verset .'" />')
+		->setBody('Veuillez trouver ci-dessous votre verset.')
+		->addPart('<br/><img src="' . $verset .'" />', 'text/html')
+
 	;
 	// Send the message
 	try {
