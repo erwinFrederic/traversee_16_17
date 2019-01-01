@@ -32,27 +32,27 @@
  *  Sendmail
  */
 
-function sendUserMail() {
-	require_once __DIR__ .'/sendgrid-php/vendor/autoload.php';
-
-	$email = new \SendGrid\Mail\Mail();
-	$email->setFrom("info@mohammedsanogo.org", "Eglises Vases d'Honneur");
-	$email->setSubject("Votre verset de l'année");
-	$email->addTo("erwinsittie@gmail.com", "Erwin Sittie");
-	$email->addContent("text/plain", "and easy to do anywhere, even with PHP");
-	$email->addContent(
-		"text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
-	);
-	$sendgrid = new \SendGrid('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');
+function sendUserMail($userEmail = NULL, $verset = NULL) {
+	require_once 'libs/vendor/autoload.php';
+	// Create the Transport
+	$transport = (new Swift_SmtpTransport('127.0.0.1', 25))
+		->setUsername('erwin.sittie@vasesdhonneur.info')
+		->setPassword('dewind91!')
+	;
+	// Create the Mailer using your created Transport
+	$mailer = new Swift_Mailer($transport);
+	// Create a message
+	$message = (new Swift_Message('Wonderful Subject'))
+		->setFrom(['traversee@vasesdhonneur.org' => 'Traversée Eglises Vases d\'Honneur'])
+		->setTo([$userEmail => ''])
+		->setBody('Veuillez trouver ci-dessous votre verset.\n <img src="' . $verset .'" />')
+	;
+	// Send the message
 	try {
-		$response = $sendgrid->send($email);
-		print $response->statusCode() . "\n";
-		print_r($response->headers());
-		print $response->body() . "\n";
+		$result = $mailer->send($message);
 	} catch (Exception $e) {
-		echo 'Caught exception: '. $e->getMessage() ."\n";
+		print $e->getMessage();
 	}
-
 }
 
 ?>
@@ -68,7 +68,7 @@ function sendUserMail() {
                     </p>
 
 
-                    <?php // sendUserMail(); ?>
+                    <?php sendUserMail($_SESSION['user_current']['mail'], $_SESSION['verset'][0]['base64']); ?>
 
                     <?php
 

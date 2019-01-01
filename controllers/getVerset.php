@@ -78,6 +78,7 @@ if( !empty($_POST['get-verset']) && !empty($_POST['name_field']) && !empty($_POS
         header('Location: ../index.php');
     }
 
+    $_SESSION['user_current']['mail'] = $_POST['email_field'];
     header('Location: ../?page=getVerset');
 
 

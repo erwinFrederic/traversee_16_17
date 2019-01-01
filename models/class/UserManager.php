@@ -96,7 +96,8 @@ class UserManager {
             $user[] = $donnees;
         }
 
-        return $user;
+        if (!empty ($user))
+        	return $user;
     }
 
 }
