@@ -36,14 +36,14 @@ function sendUserMail() {
 	require_once __DIR__ .'/sendgrid-php/vendor/autoload.php';
 
 	$email = new \SendGrid\Mail\Mail();
-	$email->setFrom("info@vasesdhonneur.info", "Eglises Vases d'Honneur");
+	$email->setFrom("info@mohammedsanogo.org", "Eglises Vases d'Honneur");
 	$email->setSubject("Votre verset de l'année");
 	$email->addTo("erwinsittie@gmail.com", "Erwin Sittie");
 	$email->addContent("text/plain", "and easy to do anywhere, even with PHP");
 	$email->addContent(
 		"text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
 	);
-	$sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+	$sendgrid = new \SendGrid('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');
 	try {
 		$response = $sendgrid->send($email);
 		print $response->statusCode() . "\n";
@@ -66,10 +66,17 @@ function sendUserMail() {
                     <p>
                         <img style="width:100%;" src="<?php print $_SESSION['verset'][0]['base64'] ?>" />
                     </p>
-                    <!-- <p class="download">
-                        <a class="button btn-primary" href="img/versets/<?php print FormatString($_SESSION['verset'][0]['vreference']) ?>.jpg">Télécharger votre calendrier</a>
-                    </p> -->
-                    <?php sendUserMail(); ?>
+
+
+                    <?php // sendUserMail(); ?>
+
+                    <?php
+
+					$filepath = 'http://vasesdhonneur.org/tirageverset/' . $_SESSION['verset'][0]['base64'];
+
+                    ?>
+
+                    <div><a href="<?php print $filepath; ?>" download="MonVerset18-19.png">Télécharger mon verset</a></div>
 
                 <?php endif; ?>
             </div>
