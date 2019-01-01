@@ -45,8 +45,8 @@ function sendUserMail($userEmail = NULL, $verset = NULL) {
 	$message = (new Swift_Message('Votre verset 2018 - 2019'))
 		->setFrom(['traversee@vasesdhonneur.org' => 'Traversée Eglises Vases d\'Honneur'])
 		->setTo([$userEmail => ''])
-		->setBody('Veuillez trouver ci-dessous votre verset.')
-		->addPart('<br/><img src="' . urlencode($verset) .'" />', 'text/html')
+		->addPart('<p>Shalom,</p><p>Veuillez trouver ci-joint votre verset de l\'année.</p><p>Cordialement</p>', 'text/html')
+		->attach(Swift_Attachment::fromPath($verset))
 
 	;
 	// Send the message
