@@ -69,14 +69,9 @@ function sendUserMail($userEmail = NULL, $verset = NULL) {
                         <img style="width:100%;" src="<?php print $_SESSION['verset'][0]['base64'] ?>" />
                     </p>
 
+                    <?php $filepath = 'http://vasesdhonneur.org/tirageverset/' . $_SESSION['verset'][0]['base64']; ?>
 
-                    <?php sendUserMail($_SESSION['user_current']['mail'], $_SESSION['verset'][0]['base64']); ?>
-
-                    <?php
-
-					$filepath = 'http://vasesdhonneur.org/tirageverset/' . $_SESSION['verset'][0]['base64'];
-
-                    ?>
+					<?php sendUserMail($_SESSION['user_current']['mail'], $filepath); ?>
 
                     <div><a class="btn btn-primary" href="<?php print $filepath; ?>" download="MonVerset18-19.png">Télécharger mon verset</a></div>
 
