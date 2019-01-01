@@ -54,6 +54,7 @@ function sendUserMail() {
 	// Send the message
     try {
 		$result = $mailer->send($message);
+		var_dump($result);
     } catch (Exception $e) {
         print $e->getMessage();
     }
@@ -63,7 +64,7 @@ function sendUserMail() {
 ?>
 
 <div class="row">
-    <div class="col-md-6 add-verset-container">
+    <div class="col-md-12 col-sm-12 col-xs-12 add-verset-container">
         <div class="page-content">
             <div class="verset">
                 <?php if (!empty($_SESSION['verset'])) : ?>
