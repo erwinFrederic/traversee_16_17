@@ -36,8 +36,8 @@ function sendUserMail($userEmail = NULL, $verset = NULL) {
 	require_once 'libs/vendor/autoload.php';
 	// Create the Transport
 	$transport = (new Swift_SmtpTransport('127.0.0.1', 25))
-		->setUsername('erwin.sittie@vasesdhonneur.info')
-		->setPassword('dewind91!')
+		// ->setUsername('erwin.sittie@vasesdhonneur.info')
+		// ->setPassword('dewind91!')
 	;
 	// Create the Mailer using your created Transport
 	$mailer = new Swift_Mailer($transport);
