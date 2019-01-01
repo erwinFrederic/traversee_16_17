@@ -33,7 +33,7 @@
  */
 
 function sendUserMail() {
-	require_once '/var/www/vhosts/vasesdhonneur.org/httpdocs/tirageverset/libs/vendor/sendgrid-php/vendor/autoload.php';
+	require_once __DIR__ .'/libs/vendor/sendgrid-php/vendor/autoload.php';
 
 	$email = new \SendGrid\Mail\Mail();
 	$email->setFrom("info@vasesdhonneur.info", "Eglises Vases d'Honneur");
